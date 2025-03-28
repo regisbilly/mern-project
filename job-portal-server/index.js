@@ -1,8 +1,11 @@
-const express = require('express');
-const cors = require("cors");
-const { MongoClient, ServerApiVersion } = require('mongodb');
-require('dotenv').config();
-const bcrypt = require('bcryptjs'); // For hashing passwords
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import bcrypt from "bcryptjs";
+import { MongoClient, ServerApiVersion } from "mongodb";
+
+dotenv.config();
+
 
 const app = express();
 const port = process.env.PORT || 3000;
