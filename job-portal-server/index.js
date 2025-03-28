@@ -1,10 +1,12 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import bcrypt from "bcryptjs";
 import { MongoClient, ServerApiVersion } from "mongodb";
+import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config();  // Load environment variables first!
+
+ // Debugging: check if it's loaded
 
 
 const app = express();
@@ -16,7 +18,7 @@ app.use(cors());
 
 // MongoDB connection
 const uri = process.env.MONGDB_URL;
-console.log('my url',uri)
+console.log("MongoDB URL:", process.env.MONGDB_URL);
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
